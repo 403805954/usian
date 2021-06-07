@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.usian.mapper.SearchItemMapper">
+
+    <select id="queryAll4ES" resultType="com.usian.vo.SearchItem">
+    SELECT i.id id,i.title item_title,i.sell_point item_sell_point,i.price item_price,i.image item_image,c.name item_category_name,d.item_desc
+    FROM tb_item i,tb_item_desc d,tb_item_cat c
+    WHERE i.id = d.item_id AND i.cid = c.id AND i.status = 1
+  </select>
+        </mapper>

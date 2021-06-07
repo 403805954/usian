@@ -1,0 +1,29 @@
+server:
+  port: 8102
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+spring:
+  application:
+    name: usian-order-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/usian?characterEncoding=UTF-8
+    username: root
+    password: 1234
+    type: com.alibaba.druid.pool.DruidDataSource
+  rabbitmq:
+    host: 192.168.74.132
+    password: 1111
+    port: 5672
+    username: admin
+    virtual-host: /
+    publisher-confirms: true #开启消息确认回调
+    publisher-returns: true #开启消息退回回调
+    listener:
+      direct:
+        acknowledge-mode: "manual"
+      simple:
+        acknowledge-mode: "manual"
+
